@@ -1,0 +1,104 @@
+\documentclass[a4paper,10pt]{ltjsarticle} %紙のサイズとフォントの大きさを指定している
+\usepackage{graphicx} %画像を扱うためのパッケージ
+\usepackage{url} %文中にURLを簡単に表示させる
+\usepackage{amsmath} %高度な数式や複雑な式のレイアウトを可能にする
+\usepackage{latexsym} %数学記号や特別な文字を使うことを考慮して追加
+\usepackage{float} %図や表の配置を指定する
+\usepackage{here} %画像を指定した場所に強制する
+
+
+
+\setlength{\textwidth}{165mm}
+\setlength{\marginparwidth}{40mm}
+\setlength{\textheight}{225mm}
+\setlength{\topmargin}{-5mm}
+\setlength{\oddsidemargin}{-3.5mm}
+
+%ここから上はとりあえずコピペしておけばいい、最悪意味がわからなくてもレポートは書ける
+
+\begin{document}
+
+\begin{center} %タイトルの部分
+  {\huge{\textbf {実験題目}}} \\
+  {\textbf{ 電気通信大学情報理工学域I\hspace{-1.2pt}I\hspace{-1.2pt}I類\\ 学籍番号:26xxxxx 名前:xxxx}} \\ %ⅡやⅢを出力しようとするとエラーが出るのでIを並べて無理やり出力する
+  {\textbf{ \today 作成}} \\%\todayでビルト(pdf化)した日の日付が自動的に入る
+\end{center}
+
+\section{目的}
+
+%ここに目的を書く
+
+\section{原理}
+
+%ここに原理を書く
+式1
+%数式の書き方-----------------------------------
+\begin{equation} %数式を書くときはequation環境を使う
+  y = \frac{x}{3} \times a %数式を書く。分数は\frac、掛け算記号は\times
+\end{equation}
+
+
+式2
+\begin{equation*}
+  \lambda = \frac{c}{\nu} %ギリシャ文字は数式中ではこのように英語で入力するといい感じになる
+\end{equation*} %式番号を消したいときは*をつける
+%------------------------------------------------
+$\lambda = 1.5 \times 10 ^{-10} \textrm{m}$%数式を文章中に書くときは$で囲む.単位は斜体で書いてはいけないので数式中の単位は\textrm{}で囲む
+
+\section{方法}
+\subsection{〇〇〇の方法}
+%ここに方法を書く
+\subsection{△△△の方法}
+%ここに方法を書く
+
+%一つの節に収まらない場合はsubsectionを使う
+
+\section{結果}
+
+%以下画像の貼り方-----------------------------------------
+%注意:画像ファイルはtexファイルと同じフォルダに入れること！！！！
+\begin{figure}[H]%Hをつけるとここに強制的に配置される．慣れるまではとりあえず[H]をつけることを推奨
+  \begin{center}
+    \includegraphics[scale = 0.8]{ファイル名.png} %scaleで幅を指定，画像ファイル名は拡張子まで書く.
+    \caption{図の説明} %キャプションを書く．説明がいらないなら消してもよい
+    \label{fig:ラベル} %図を参照するときに使うラベルを書く
+  \end{center}
+\end{figure}
+%--------------------------------------------------------
+
+%図を参照するときは\ref{fig:ラベル}と書く
+
+%表の貼り方-------------------------------------------------
+\begin{table}[H]
+  \begin{center}
+    \caption{表の説明} %キャプションを書く．説明がいらないなら消してもよい
+    \begin{tabular}{cccc}%cの数は表の列の数に合わせる(cは中央寄せ，lは左寄せ，rは右寄せ)今回は4列
+       &要素1 &要素2 &要素3\\ \hline %\hlineで表の横線を引く，&は列の区切り，\\は行の区切り
+       要素4& & &\\
+       & & 要素5&\\ \hline
+    \end{tabular}
+   \label{tab:ラベル} %表を参照するときに使うラベルを書く
+  \end{center}
+\end{table}
+%--------------------------------------------------------
+%表を参照するときは\ref{tab:ラベル}と書く
+
+%minipageを用いて表や画像を並べることもできるが、少しめんどくさいのでLaTeXに慣れてきた頃に使用することをおすすめする。
+
+%学習用おすすめサイト:https://guides.lib.kyushu-u.ac.jp/LaTeX-LectureNote/equations
+
+%わからなかったらGeminiなどの生成AIに聞くのも手
+
+
+\section{考察}
+%ここに考察を書く
+
+\begin{thebibliography}{99}%参考文献を書くところ
+  %参考文献の書き方はちゃんと調べよう(おすすめサイト:https://www.lib.niigata-u.ac.jp/wp-content/uploads/2023/10/reference2022.pdf)
+\bibitem{ラベル1} 文献
+\bibitem{ラベル2} 文献
+\end{thebibliography}
+
+\end{document}
+
+%書き終えたら右上の緑色の三角(再生ボタンみたいなやつ)からPDFファイルをビルドしようs
